@@ -16,26 +16,27 @@ Event.init(
             allowNull: false,
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(1200),
             allowNull: false,
         },
         guidelines: {
             type: DataTypes.STRING,
         },
         date_created: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        date: {
-            type: DataTypes.DATE,
+        time: {
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isDate: true
-            }
+        },
+        date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
         },
         location_name: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: false,
         },
         location_lat: {
