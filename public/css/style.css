@@ -1,0 +1,327 @@
+.btn-outline-success,
+.btn-outline-success *,
+.btn-outline-success :after,
+.btn-outline-success :before,
+.btn-outline-success:after,
+.btn-outline-success:before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.btn-outline-success {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+}
+
+.btn-outline-success:disabled {
+    cursor: default;
+}
+
+.btn-outline-success:-moz-focusring {
+    outline: auto;
+}
+
+.btn-outline-success svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.btn-outline-success [hidden] {
+    display: none;
+}
+
+.btn-outline-success {
+    background: none;
+    border: 3px solid;
+    border-radius: 999px;
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    font-weight: 900;
+    -webkit-mask-image: none;
+    padding: 15px 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.btn-outline-success:before {
+    background: #fff;
+    border-radius: 999px;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: translate(10px, 10px);
+    transition: transform 0.2s;
+    z-index: -1;
+}
+
+.btn-outline-success:hover:before {
+    transform: translate(0);
+}
+
+.btn-outline-primary,
+.btn-outline-primary *,
+.btn-outline-primary :after,
+.btn-outline-primary :before,
+.btn-outline-primary:after,
+.btn-outline-primary:before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.btn-outline-primary {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+}
+
+.btn-outline-primary:disabled {
+    cursor: default;
+}
+
+.btn-outline-primary:-moz-focusring {
+    outline: auto;
+}
+
+.btn-outline-primary svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.btn-outline-primary [hidden] {
+    display: none;
+}
+
+.btn-outline-primary {
+    background: none;
+    border: 3px solid;
+    border-radius: 999px;
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    font-weight: 900;
+    -webkit-mask-image: none;
+    padding: 15px 53px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.btn-outline-primary:before {
+    background: #fff;
+    border-radius: 999px;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: translate(10px, 10px);
+    transition: transform 0.2s;
+    z-index: -1;
+}
+
+.btn-outline-primary:hover:before {
+    transform: translate(0);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.up {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.down {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.card1 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 90px 5px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.instagram {
+    margin-top: 1.5em;
+    margin-left: 1.2em;
+    fill: #cc39a4;
+}
+
+.card2 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 90px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.twitter {
+    margin-top: 1.5em;
+    margin-left: -.9em;
+    fill: #03A9F4;
+}
+
+.card3 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 5px 90px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.github {
+    margin-top: -.6em;
+    margin-left: 1.2em;
+}
+
+.card4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 90px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.discord {
+    margin-top: -.9em;
+    margin-left: -1.2em;
+    fill: #8c9eff;
+}
+
+.card1:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+    fill: white;
+}
+
+.card2:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #03A9F4;
+}
+
+.card2:hover .twitter {
+    fill: white;
+}
+
+.card3:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: black;
+}
+
+.card3:hover .github {
+    fill: white;
+}
+
+.card4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #8c9eff;
+}
+
+.card4:hover .discord {
+    fill: white;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand {
+    font-size: 2.25rem;
+}
+body {
+    background-color:aliceblue
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1.display-4 {
+    font-size: 2.5rem; /* or larger if you prefer */
+}
+
+.lead {
+    font-size: 1.25rem;
+}
+
+/* Hover effects for buttons */
+.btn-outline-primary:hover, .btn-outline-success:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+    h1.display-4 {
+        font-size: 2rem;
+    }
+    .lead {
+        font-size: 1rem;
+    }
+}
+
+/* Ensure the .card-img-top fills the card's width and has a set height */
+.card-img-top {
+    width: 100%;
+    height: 400px; /* Adjust this as needed */
+    object-fit: cover;
+}
+
+/* Adjust the card height for large screens */
+@media (min-width: 768px) {
+    .card {
+        height: 400px; /* This should be the same height as the image for alignment */
+    }
+}
+
+  
+
