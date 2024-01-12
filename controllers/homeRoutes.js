@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
     // const currentDate = new Date();
     // //only return events for today's date
     // const eventsToday = events.map((eventsToday)) => eventsToday.get({eventsToday.date=currentDate});//TODO: want to display only today's events
-    const events = eventsToday.map((event) => event.get({ plain: true }));
+    // const events = eventsToday.map((event) => event.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
