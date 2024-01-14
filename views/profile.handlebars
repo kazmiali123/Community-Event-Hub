@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Event:</h3>
+    <form class="form new-event-form">
+      <div class="form-group">
+        <label for="event-name">Event Name:</label>
+        <input class="form-input" type="text" id="event-name" name="event-name" />
+      </div>
+      <div class="form-group">
+        <label for="event-time">Time:</label>
+        <input class="form-input" type="text" id="event-time" name="event-time" />
+      </div>
+      <div class="form-group">
+        <label for="event-date">Date:</label>
+        <input class="form-input" type="text" id="event-date" name="event-date" />
+        <!-- Date picker functionality to be added -->
+      </div>
+      <div class="form-group">
+        <label for="event-address">Address:</label>
+        <textarea class="form-input" type="text" id="event-address" name="event-address"></textarea>
+        <!-- Auto-populated from address search -->
+      </div>
+      <div class="form-group">
+        <label for="event-guidelines">Guidelines:</label>
+        <textarea class="form-input" id="event-guidelines" name="event-guidelines"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="event-organizer">Organizer:</label>
+        <textarea class="form-input" type="text" id="event-organizer" name="event-organizer"></textarea>
+        <!-- Auto-populated from user login -->
+      </div>
+      <div class="form-group">
+        <label for="event-desc">Description:</label>
+        <textarea class="form-input" id="event-desc" name="event-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+  {{#if events.length}}
+  <div class="col-md-6 event-list">
+    <h3>Current Projects:</h3>
+    {{#each events as |event|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/profile/{{event.id}}">{{event.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{event.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+<script src="/js/profile.js"></script>

@@ -1,0 +1,7 @@
+<div class="event-list-box">
+  {{#each events as |event|}}
+    <div class="event-name">
+      <a href="/event/{{event.id}}">{{event.name}}</a>
+    </div>
+  {{/each}}
+</div>

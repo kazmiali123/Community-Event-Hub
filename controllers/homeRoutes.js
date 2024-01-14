@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Event, User } = require('../models');
+
+const { findAll } = require('../models/event');
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
-
-
 
 router.get('/event/:id', async (req, res) => {
   try {
@@ -27,18 +27,27 @@ router.get('/event/:id', async (req, res) => {
   }
 });
 
-
+// Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
+    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Event }],
+      include: [{ model: Event, include: User }],
     });
-
-    const user = userData.get({ plain: true });
-
+    console.log(userData);
+    const events = await Event.findAll(
+      {
+        include: [ User ]
+      }
+    )
+    // const dishes = dishData.map((dish) => dish.get({ plain: true }));
+    console.log(events);
+    // const user = userData.get({ plain: true });
     res.render('profile', {
-      ...user,
+      // ...user,
+      events,
+
       logged_in: true
     });
   } catch (err) {
@@ -47,6 +56,8 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
@@ -54,8 +65,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
-
 
 // router.get('/', async (req, res) => {
 //   try {
@@ -80,12 +89,11 @@ router.get('/login', (req, res) => {
 
 //     // Serialize data so the template can read it
 //     const events = eventData.map((event) => event.get({ plain: true }));
-
-
 //     // Pass serialized data and session flag into the template
-//     res.render('homepage', { 
-//       events, 
-//       logged_in: req.session.logged_in 
+//     res.render('homepage', {
+//       events,
+//       logged_in: req.session.logged_in
+
 //     });
 //   } catch (err) {
 //     res.status(500).json(err);
@@ -94,6 +102,8 @@ router.get('/login', (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
+    // Get all events and JOIN with user data
+
     const eventData = await Event.findAll({
       include: [
         {
@@ -102,7 +112,11 @@ router.get('/', async (req, res) => {
         },
       ],
     });
+
+    // Serialize data so the template can read it
     const events = eventData.map((event) => event.get({ plain: true }));
+    // Pass serialized data and session flag into template
+
     res.render('homepage', {
       events,
       logged_in: req.session.logged_in
@@ -113,3 +127,4 @@ router.get('/', async (req, res) => {
 });
 
 module.exports = router;
+
