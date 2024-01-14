@@ -1,16 +1,7 @@
-<!-- Loop over each object in the projects array -->
-{{#each events as |event| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
+<div class="event-list-box">
+  {{#each events as |event|}}
+    <div class="event-name">
       <a href="/event/{{event.id}}">{{event.name}}</a>
-    </h2>
-    <p><a href="/event/{{event.id}}">{{event.name}}</a></p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{event.description}}
-    </p>
-  </div>
+    </div>
+  {{/each}}
 </div>
-{{/each}}

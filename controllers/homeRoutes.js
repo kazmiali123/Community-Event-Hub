@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Event, User } = require('../models');
+const { findAll } = require('../models/event');
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
 router.get('/event/:id', async (req, res) => {
@@ -27,11 +28,20 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Event }],
+      include: [{ model: Event, include: User }],
     });
-    const user = userData.get({ plain: true });
+    console.log(userData);
+    const events = await Event.findAll(
+      {
+        include: [ User ]
+      }
+    )
+    // const dishes = dishData.map((dish) => dish.get({ plain: true }));
+    console.log(events);
+    // const user = userData.get({ plain: true });
     res.render('profile', {
-      ...user,
+      // ...user,
+      events,
       logged_in: true
     });
   } catch (err) {

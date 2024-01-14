@@ -1,13 +1,3 @@
 .DS_Store
 node_modules
 .env
-config
-controller
-db
-models
-login.js
-logout.js
-profile.js
-seeds
-auth.js
-server.js
