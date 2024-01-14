@@ -24,32 +24,31 @@ Event.init(
         },
         date_created: {
             type: DataTypes.DATEONLY,
-            allowNull: false,
+            //allowNull: false,
             defaultValue: DataTypes.NOW,
         },
         time: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         date: {
             type: DataTypes.DATEONLY,
-            allowNull: false,
+            //allowNull: false,
         },
         location_name: {
             type: DataTypes.STRING(500),
-            allowNull: false,
+            //allowNull: false,
         },
         location_lat: {
             type: DataTypes.DECIMAL(10, 6),
-            allowNull: false,
+            //allowNull: false,
         },
         location_long: {
             type: DataTypes.DECIMAL(10, 6),
-            allowNull: false,
+            //allowNull: false,
         },
-        organizer_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+         organizer_id: {
+             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
