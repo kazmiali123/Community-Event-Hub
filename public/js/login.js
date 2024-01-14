@@ -1,41 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
-
-    loginForm.addEventListener('submit', (event) => {
-        // Prevent the default form submission
-        event.preventDefault();
-
-        // Get the form data
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        // Simple client-side validation
-        if (username && password) {
-            // For example, using the Fetch API:
-            fetch('/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // Handle response data
-                    if (data.success) {
-                        window.location.href = '/dashboard'; // Redirect to the dashboard on success
-                    } else {
-                        // Display an error message
-                        alert('Login failed: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    // Handle any other errors
-                    console.error('Error during login:', error);
-                });
-        } else {
-            // If validation fails, show an alert
-            alert('Please enter both username and password.');
-        }
+const loginFormHandler = async (event) => {
+  event.preventDefault();
+  // Collect values from the login form
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
+  if (email && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
     });
-});
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+  if (name && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);

@@ -1,34 +1,13 @@
 const router = require('express').Router();
 const { Event, User } = require('../models');
 const withAuth = require('../utils/auth');
-router.get('/', async (req, res) => {
-    try {
-        // Get all events and JOIN with user data
-        const eventData = await Event.findAll({
-          include: [
-            {
-              model: User,
-              attributes: ['name'],
-            },
-          ],
-        });
-        // Serialize data so the template can read it
-        const events = eventData.map((event) => event.get({ plain: true }));
-        // Pass serialized data and session flag into template
-        res.render('homepage', {
-          events,
-          logged_in: req.session.logged_in
-        });
-      } catch (err) {
-        res.status(500).json(err);
-      }
-    });
+const { Op } = require('sequelize');
 router.get('/event/:id', async (req, res) => {
   try {
     const eventData = await Event.findByPk(req.params.id, {
       include: [
         {
-          model: users,
+          model: User,
           attributes: ['name'],
         },
       ],
@@ -46,9 +25,9 @@ router.get('/event/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await user.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: event }],
+      include: [{ model: Event }],
     });
     const user = userData.get({ plain: true });
     res.render('profile', {
@@ -66,5 +45,57 @@ router.get('/login', (req, res) => {
     return;
   }
   res.render('login');
+});
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get the current date in the format YYYY-MM-DD
+//     const currentDate = new Date().toISOString().split('T')[0];
+//     console.log(currentDate);
+//     // Get all events for the current day and JOIN with user data
+//     const eventData = await Event.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//       where: {
+//         date: {
+//           [Op.eq]: `${currentDate}`, // filter events for current day
+//         },
+//       },
+//     });
+//     // Serialize data so the template can read it
+//     const events = eventData.map((event) => event.get({ plain: true }));
+//     // Pass serialized data and session flag into the template
+//     res.render('homepage', {
+//       events,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+router.get('/', async (req, res) => {
+  try {
+    // Get all events and JOIN with user data
+    const eventData = await Event.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+    // Serialize data so the template can read it
+    const events = eventData.map((event) => event.get({ plain: true }));
+    // Pass serialized data and session flag into template
+    res.render('homepage', {
+      events,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 module.exports = router;

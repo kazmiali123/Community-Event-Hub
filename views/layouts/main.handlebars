@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Event Hub</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Community-Event-Hub/public/css/style.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Community Event Hub</a>
+      <nav class="navbar-nav ml-auto">
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a class="nav-item nav-link" href="/profile">Profile</a>
+        <button class="btn btn-outline-secondary" id="logout">Logout</button>
+        {{else}}
+        <a class="nav-item nav-link" href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main class="container mt-5">
+      <h2>Welcome to the Community Event Hub!</h2>
+      <p class="text-0">Discover and participate in exciting local events. Connect with your community and explore a wide range of activities. Whether you're looking to join local workshops, community gatherings, or social events, Community Event Hub is your go-to destination.</p>
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
+  </div>
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
