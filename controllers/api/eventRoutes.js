@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { event } = require('../../models');
+const { Event } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newEvent = await event.create({
+    const newEvent = await Event.create({
       ...req.body,
-      user_id: req.session.user_id,
+      organizer_id: req.session.user_id,
     });
 
     res.status(200).json(newEvent);
@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const eventData = await event.destroy({
+    const eventData = await Event.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
