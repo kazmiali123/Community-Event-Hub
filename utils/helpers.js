@@ -5,4 +5,8 @@ module.exports = {
   format_amount: (amount) => {
     return parseInt(amount).toLocaleString();
   },
+
+  dataAsJson: (data) => {
+    return JSON.stringify(data);
+  },
 };

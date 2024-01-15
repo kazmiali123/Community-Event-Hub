@@ -27,5 +27,16 @@ h2 {
   .event-name:last-child {
     border-bottom: none; /* Remove the bottom border for the last element */
   }
+
+  #map {
+    height: 500px;
+    width: 700px;
+    border: 1px solid black;
+  }
+
+  #uploaded-image {
+    height: 500px;
+    width: 700px;
+  }
   
 
