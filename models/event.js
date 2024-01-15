@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 class Event extends Model { }
+
 Event.init(
     {
         id: {
@@ -45,8 +46,8 @@ Event.init(
             type: DataTypes.DECIMAL(10, 6),
             //allowNull: false,
         },
-         organizer_id: {
-             type: DataTypes.INTEGER,
+        user_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
