@@ -8,7 +8,7 @@
         "location_name": "Roy Thomson Hall, 60, Simcoe Street, Entertainment District, Spadina—Fort York, Old Toronto, Toronto, Golden Horseshoe, Ontario, M5J 1V6, Canada",
         "location_lat": 43.64655855,
         "location_long": -79.38633898,
-        "organizer_id": 1      
+        "user_id": 1      
     },
     {
         "name": "Queens Of The Stone Age",
@@ -19,7 +19,7 @@
         "location_name": "Tribute Communities Centre, 99, Athol Street East, Downtown Oshawa, Oshawa, Durham Region, Golden Horseshoe, Ontario, L1H 1B4, Canada",
         "location_lat": 43.897022,
         "location_long": -78.85919806,
-        "organizer_id": 2      
+        "user_id": 2      
     },
     {
         "name": "Majid Razavi Live in Toronto",
@@ -30,7 +30,7 @@
         "location_name": "Metro Toronto Convention Centre offices, 255, Front Street West, Entertainment District, Spadina—Fort York, Old Toronto, Toronto, Golden Horseshoe, Ontario, M5V 2X3, Canada",
         "location_lat": 43.6443169,
         "location_long": -79.3858756,
-        "organizer_id": 1      
+        "user_id": 1      
     },
     {
         "name": "Greenhouse Festival",
@@ -41,7 +41,7 @@
         "location_name": "Tarragon Theatre, 30, Bridgman Avenue, Tarragon Village, Toronto—St. Paul's, Old Toronto, Toronto, Golden Horseshoe, Ontario, M5R 3H2, Canada",
         "location_lat": 43.6749498,
         "location_long": -79.4129416,
-        "organizer_id": 3      
+        "user_id": 3      
     },
     {
         "name": "Armin Van Buuren",
@@ -52,7 +52,7 @@
         "location_name": "Rebel, 11, Polson Street, Port Lands, Toronto—Danforth, Old Toronto, Toronto, Golden Horseshoe, Ontario, M5A 1A4, Canada",
         "location_lat": 43.640781,
         "location_long": -79.3549726,
-        "organizer_id": 1      
+        "user_id": 1      
     },
     {
         "name": "Toronto Comic Arts Festival (TCAF)",
@@ -63,7 +63,7 @@
         "location_name": "Toronto Public Library - Toronto Reference Library, 789, Yonge Street, Yorkville, University—Rosedale, Old Toronto, Toronto, Golden Horseshoe, Ontario, M4W 2G8, Canada",
         "location_lat": 43.6718771,
         "location_long": -79.3866662989,
-        "organizer_id": 1      
+        "user_id": 1      
     },
     {
         "name": "The Rhubarb Festival",
@@ -74,7 +74,7 @@
         "location_name": "Buddies in Bad Times, 12, Alexander Street, Church-Wellesley Village, Toronto Centre, Old Toronto, Toronto, Golden Horseshoe, Ontario, M4Y 1B4, Canada",
         "location_lat": 43.6632092,
         "location_long": -79.382994,
-        "organizer_id": 2      
+        "user_id": 2      
     },
     {
         "name": "DesignTO Festival 2024",
@@ -85,7 +85,7 @@
         "location_name": "91, Pelham Avenue, Carleton Village, Davenport, Old Toronto, Toronto, Golden Horseshoe, Ontario, M6N, Canada",
         "location_lat": 43.6675484428,
         "location_long": -79.45736458,
-        "organizer_id": 3      
+        "user_id": 3      
     },
     {
         "name": "Weekend Festivals at Celebration Square",
@@ -96,7 +96,7 @@
         "location_name": "Mississauga Civic Centre, 300, City Centre Drive, City Centre, Mississauga, Peel Region, Golden Horseshoe, Ontario, L5B 4N3, Canada",
         "location_lat": 43.5888456,
         "location_long": -79.6443760825,
-        "organizer_id": 3      
+        "user_id": 3      
     },
     {
         "name": "Ice skating and drinks at College Park",
@@ -107,6 +107,6 @@
         "location_name": "College Park, 444, Yonge Street, Discovery District, University—Rosedale, Old Toronto, Toronto, Golden Horseshoe, Ontario, M4Y 1X4, Canada",
         "location_lat": 43.66056235,
         "location_long": -79.3834490593,
-        "organizer_id": 2      
+        "user_id": 2      
     }
 ]

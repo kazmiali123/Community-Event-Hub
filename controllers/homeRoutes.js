@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Event, User } = require('../models');
+const { Event, User, Image } = require('../models');
 
-const { findAll } = require('../models/event');
+// const { findAll } = require('../models/event');
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
 
@@ -13,11 +13,15 @@ router.get('/event/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Image,
+          arribute: ['url'],
+        }
       ],
     });
 
     const event = eventData.get({ plain: true });
-
+    console.log(event);
     res.render('event', {
       ...event,
       logged_in: req.session.logged_in
@@ -38,7 +42,7 @@ router.get('/profile', withAuth, async (req, res) => {
     console.log(userData);
     const events = await Event.findAll(
       {
-        include: [ User ]
+        include: [User]
       }
     )
     // const dishes = dishData.map((dish) => dish.get({ plain: true }));
@@ -110,13 +114,18 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Image,
+          arribute: ['url'],
+        }
       ],
     });
+
 
     // Serialize data so the template can read it
     const events = eventData.map((event) => event.get({ plain: true }));
     // Pass serialized data and session flag into template
-
+    console.log(events);
     res.render('homepage', {
       events,
       logged_in: req.session.logged_in
