@@ -1,9 +1,13 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{user.name}}!</h2>
   </div>
 </div>
-<div class="row mt-4">
+
+<a class="nav-item nav-link" href="/createEvent">
+  <button class="btn btn-primary" id="create-event">Create New Event</button>
+</a>
+{{!-- <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Event:</h3>
     <form class="form new-event-form">.
@@ -43,10 +47,10 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div> --}}
   {{#if user.events.length}}
   <div class="col-md-6 event-list">
-    <h3>Current Projects:</h3>
+    <h3>Current Events:</h3>
     {{#each user.events as |event|}}
     <div class="row mb-2">
       <div class="col-md-8">
