@@ -135,5 +135,32 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/createEvent', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      include: [
+        {
+          model: Event,
+          attributes: ['id', 'name'],
+        }
+      ]
+    });
+
+    const user = userData.get({ plain: true });
+
+    console.log("======", user);
+
+    res.render('profile', {
+      // ...user,
+      user,
+
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
 
