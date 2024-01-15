@@ -45,15 +45,15 @@
   </div>
   {{#if events.length}}
   <div class="col-md-6 event-list">
-    <h3>Current Projects:</h3>
+    <h3>Your Events:</h3>
     {{#each events as |event|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/profile/{{event.id}}">{{event.name}}</a></h4>
+        <h4><a href="/event/{{event.id}}">{{event.name}}</a></h4>
       </div>
-      <div class="col-md-4">
+      {{!-- <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{event.id}}">DELETE</button>
-      </div>
+      </div> --}}
     </div>
     {{/each}}
   </div>

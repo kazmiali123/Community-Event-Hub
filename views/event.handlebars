@@ -1,6 +1,6 @@
 <div class="text-center">
   <h2>{{name}}</h2>
-  <p>Created by {{user.name}}</p>
+  {{!-- <p>Created by {{user.name}}</p> --}}
   <p>
     <button class="btn btn-primary">click here</button>
   </p>
@@ -8,9 +8,9 @@
 <div class="col-md-6">
   <h3>Event Information</h3>
   <form class="form new-event-form">
-    <div class="form-group">
+    {{!-- <div class="form-group">
       <label for="event-name">Event Name: {{name}}</label>
-    </div>
+    </div> --}}
     <div class="form-group">
       <label for="event-description">Description: {{description}}</label>
     </div>
@@ -27,7 +27,7 @@
       <label for="event-address">Location: {{location_name}}</label>
     </div>
     <div class="form-group">
-      <label for="event-organizer">Organizer: {{organizer_id}}</label>
+      <label for="event-organizer">Organizer: {{User.name}}</label>
     </div>
   </form>
 </div>
