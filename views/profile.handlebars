@@ -6,7 +6,8 @@
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Event:</h3>
-    <form class="form new-event-form">
+    <form class="form new-event-form">.
+
       <div class="form-group">
         <label for="event-name">Event Name:</label>
         <input class="form-input" type="text" id="event-name" name="event-name" />
@@ -43,10 +44,10 @@
       </div>
     </form>
   </div>
-  {{#if events.length}}
+  {{#if user.events.length}}
   <div class="col-md-6 event-list">
     <h3>Current Projects:</h3>
-    {{#each events as |event|}}
+    {{#each user.events as |event|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/profile/{{event.id}}">{{event.name}}</a></h4>

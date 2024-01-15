@@ -32,25 +32,25 @@ router.get('/event/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/myevents', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Event, include: User }],
+      include: [
+        {
+          model: Event,
+          attributes: ['id', 'name'],
+        }
+      ]
     });
-    console.log(userData);
-    const events = await Event.findAll(
-      {
-        include: [User]
-      }
-    )
-    // const dishes = dishData.map((dish) => dish.get({ plain: true }));
-    console.log(events);
-    // const user = userData.get({ plain: true });
+
+    const user = userData.get({ plain: true });
+
+    console.log("======", user);
+
     res.render('profile', {
       // ...user,
-      events,
+      user,
 
       logged_in: true
     });
