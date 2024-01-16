@@ -1,7 +1,8 @@
-const Event = require('./Event');
+const Event = require('./event');
 const User = require('./User');
 const Image = require('./image');
 
+// new comment
 Event.hasOne(Image, {
     foreignKey: 'event_id',
     onDelete: 'CASCADE',
