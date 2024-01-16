@@ -1,21 +1,17 @@
 <div class="text-center">
-  <h2 class="events-01">{{name}}</h2>
+  <h2>{{name}}</h2>  
+  <p>
+    <button class="btn btn-primary">click here</button>
+  </p>
 </div>
-
+  
 <div class="row">
   <div class="col-md-6">
     <img id="uploaded-image" src="{{image.url}}" />
   </div>
-
+  
   <div class="col-md-6">
-    <button3 class="cta">
-      <span class="hover-underline-animation"> Event information </span>
-      <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
-        <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-          transform="translate(30)"></path>
-      </svg>
-    </button3>
-
+    <h3>Event Information</h3>
     <form class="form new-event-form">
       <div class="form-group">
         <label for="event-name">Event Name: {{name}}</label>

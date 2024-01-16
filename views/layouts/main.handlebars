@@ -14,7 +14,7 @@
 
 <body>
   <div class="container-fluid">
-    <header class="navbar navbar-expand-lg navbar-light bg-light">
+    <header class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
       <a class="navbar-brand" href="/">Community Event Hub</a>
       <nav class="navbar-nav ml-auto">
         <!-- Conditionally render login or logout links -->
@@ -24,8 +24,9 @@
         </a>
         <button class="btn btn-outline-secondary" id="logout">Logout</button>
         {{else}}
-        <a class="nav-item nav-link" href="/login">Login</a>
+        <a class="login" href="/login">Login</a>
         {{/if}}
+
       </nav>
     </header>
     <main class="container mt-5 col-9">
@@ -33,12 +34,154 @@
       {{{ body }}}
 
     </main>
-    <footer class="footer mt-auto py-3 bg-light">
-      <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+    <footer>
+      <div class="task" draggable="true">
+        <div class="tags">
+          <span class="tag">Review</span>
+          <button class="options">
+            <svg xml:space="preserve" viewBox="0 0 41.915 41.916" xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg" id="Capa_1" version="1.1" fill="#000000">
+              <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+              <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <path
+                      d="M11.214,20.956c0,3.091-2.509,5.589-5.607,5.589C2.51,26.544,0,24.046,0,20.956c0-3.082,2.511-5.585,5.607-5.585 C8.705,15.371,11.214,17.874,11.214,20.956z">
+                    </path>
+                    <path
+                      d="M26.564,20.956c0,3.091-2.509,5.589-5.606,5.589c-3.097,0-5.607-2.498-5.607-5.589c0-3.082,2.511-5.585,5.607-5.585 C24.056,15.371,26.564,17.874,26.564,20.956z">
+                    </path>
+                    <path
+                      d="M41.915,20.956c0,3.091-2.509,5.589-5.607,5.589c-3.097,0-5.606-2.498-5.606-5.589c0-3.082,2.511-5.585,5.606-5.585 C39.406,15.371,41.915,17.874,41.915,20.956z">
+                    </path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <p>"The website presents a clear and user-friendly community event hub for Toronto, featuring an interactive map
+          and a comprehensive list of current events that cater to a variety of interests. Its minimalistic design and
+          straightforward layout make for an accessible and efficient user experience." </p>
+        <div class="stats">
+          <div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path stroke-linecap="round" stroke-width="2" d="M12 8V12L15 15"></path>
+                  <circle stroke-width="2" r="9" cy="12" cx="12"></circle>
+                </g>
+              </svg>Feb 24</div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"
+                    d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z">
+                  </path>
+                </g>
+              </svg>18</div>
+            <div><svg fill="#000000" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                version="1.1" viewBox="-2.5 0 32 32">
+                <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="icomoon-ignore"> </g>
+                  <path fill="#000000"
+                    d="M0 10.284l0.505 0.36c0.089 0.064 0.92 0.621 2.604 0.621 0.27 0 0.55-0.015 0.836-0.044 3.752 4.346 6.411 7.472 7.060 8.299-1.227 2.735-1.42 5.808-0.537 8.686l0.256 0.834 7.63-7.631 8.309 8.309 0.742-0.742-8.309-8.309 7.631-7.631-0.834-0.255c-2.829-0.868-5.986-0.672-8.686 0.537-0.825-0.648-3.942-3.3-8.28-7.044 0.11-0.669 0.23-2.183-0.575-3.441l-0.352-0.549-8.001 8.001zM1.729 10.039l6.032-6.033c0.385 1.122 0.090 2.319 0.086 2.334l-0.080 0.314 0.245 0.214c7.409 6.398 8.631 7.39 8.992 7.546l-0.002 0.006 0.195 0.058 0.185-0.087c2.257-1.079 4.903-1.378 7.343-0.836l-13.482 13.481c-0.55-2.47-0.262-5.045 0.837-7.342l0.104-0.218-0.098-0.221-0.031 0.013c-0.322-0.632-1.831-2.38-7.498-8.944l-0.185-0.215-0.282 0.038c-0.338 0.045-0.668 0.069-0.981 0.069-0.595 0-1.053-0.083-1.38-0.176z">
+                  </path>
+                </g>
+              </svg>7</div>
+          </div>
+          <div class="viewer">
+            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path stroke-width="2" stroke="#ffffff"
+                    d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z">
+                  </path>
+                  <path stroke-linecap="round" stroke-width="2" stroke="#ffffff"
+                    d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"></path>
+                </g>
+              </svg></span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path stroke-width="2" stroke="#ffffff"
+                    d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z">
+                  </path>
+                  <path stroke-linecap="round" stroke-width="2" stroke="#ffffff"
+                    d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"></path>
+                </g>
+              </svg></span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path stroke-width="2" stroke="#ffffff"
+                    d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z">
+                  </path>
+                  <path stroke-linecap="round" stroke-width="2" stroke="#ffffff"
+                    d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"></path>
+                </g>
+              </svg></span>
+            <span>+20</span>
+          </div>
+        </div>
+
       </div>
     </footer>
+    <footer>
+      <ul class="social">
+        <li class="social-item">
+          <a class="social-link" href="/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
+                fill="currentColor"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="social-item">
+          <a class="social-link" href="/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8 3C9.10457 3 10 3.89543 10 5V8H16C17.1046 8 18 8.89543 18 10C18 11.1046 17.1046 12 16 12H10V14C10 15.6569 11.3431 17 13 17H16C17.1046 17 18 17.8954 18 19C18 20.1046 17.1046 21 16 21H13C9.13401 21 6 17.866 6 14V5C6 3.89543 6.89543 3 8 3Z"
+                fill="currentColor"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="social-item">
+          <a class="social-link" href="/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6 12C6 15.3137 8.68629 18 12 18C14.6124 18 16.8349 16.3304 17.6586 14H12V10H21.8047V14H21.8C20.8734 18.5645 16.8379 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C15.445 2 18.4831 3.742 20.2815 6.39318L17.0039 8.68815C15.9296 7.06812 14.0895 6 12 6C8.68629 6 6 8.68629 6 12Z"
+                fill="currentColor"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="social-item">
+          <a class="social-link" href="/">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z"
+                fill="currentColor"></path>
+              <path
+                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                fill="currentColor"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                fill="currentColor"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
   </div>
+  </footer>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>

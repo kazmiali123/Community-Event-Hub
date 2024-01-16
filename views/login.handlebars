@@ -1,37 +1,44 @@
 <div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+  <div class="col-md-6 card"> <!-- Added 'card' class -->
+    <h2 class="login">Login</h2> <!-- Added 'login' class -->
     <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+      <div class="form-group inputBox"> <!-- Added 'inputBox' class -->
+        <label for="email-login"></label>
+        <input class="form-input" type="text" id="email-login" required /> <!-- Added 'required' for CSS effect -->
+        <span>Email</span> <!-- Added for CSS effect -->
+      </div>
+      <div class="form-group inputBox"> <!-- Added 'inputBox' class -->
+        <label for="password-login"></label>
+        <input class="form-input" type="password" id="password-login" required />
+        <!-- Added 'required' for CSS effect -->
+        <span>Password</span> <!-- Added for CSS effect -->
       </div>
       <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+        <button class="btn btn-primary enter" type="submit">login</button> <!-- Added 'enter' class -->
       </div>
     </form>
   </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
+  <div class="col-md-6 card"> <!-- Added 'card' class -->
+    <h2 class="login">Signup</h2> <!-- Used 'login' class for similar styling -->
     <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+      <div class="form-group inputBox"> <!-- Added 'inputBox' class -->
+        <label for="name-signup"></label>
+        <input class="form-input" type="text" id="name-signup" required /> <!-- Added 'required' for CSS effect -->
+        <span>Name</span> <!-- Added for CSS effect -->
+      </div>
+      <div class="form-group inputBox"> <!-- Added 'inputBox' class -->
+        <label for="email-signup"></label>
+        <input class="form-input" type="text" id="email-signup" required /> <!-- Added 'required' for CSS effect -->
+        <span>Email</span> <!-- Added for CSS effect -->
+      </div>
+      <div class="form-group inputBox"> <!-- Added 'inputBox' class -->
+        <label for="password-signup"></label>
+        <input class="form-input" type="password" id="password-signup" required />
+        <!-- Added 'required' for CSS effect -->
+        <span>Password</span> <!-- Added for CSS effect -->
       </div>
       <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+        <button class="btn btn-primary enter" type="submit">signup</button> <!-- Added 'enter' class -->
       </div>
     </form>
   </div>

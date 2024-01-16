@@ -1,0 +1,33 @@
+<h2>Welcome to the Community Event Hub!</h2>
+<p class="text-0">Discover and participate in exciting local events. Connect with your community and explore a wide
+  range of activities. Whether you're looking to join local workshops, community gatherings, or social events, Community
+  Event Hub is your go-to destination.</p>
+
+{{!-- <div class="event-list-box">
+  {{#each events as |event|}}
+  <div class="event-name">
+    <a href="/event/{{event.id}}">{{event.name}}</a>
+  </div>
+  {{/each}}
+</div> --}}
+
+<div class="row">
+  <div class="col-sm-8">
+    <h3>Map</h3>
+    <div id="map"></div>
+  </div>
+  <div class="col-sm-4">
+    <h3>Today's Events</h3>
+    <div class="event-list-box">
+      {{#each events as |event|}}
+      <div class="event-name">
+        <a href="/event/{{event.id}}">{{event.name}}</a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<script>
+  window.dataHdbrs = (`{{{jsonData events}}}`);
+</script>
