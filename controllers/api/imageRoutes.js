@@ -4,8 +4,6 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
-        console.log("got to this route");
-        console.log(req.body);
         const newImage = await Image.create({
             url: req.body.url,
             event_id: req.body.event_id

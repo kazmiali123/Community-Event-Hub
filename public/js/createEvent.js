@@ -38,7 +38,6 @@ Bytescale.UploadWidget.open(options).then(
             ? "No file selected."
             : `File uploaded:\n\n${fileUrls}`;
         imageURL = fileUrls;
-        console.log(fileUrls);
         alert(success);
     },
     error => {
@@ -49,7 +48,6 @@ Bytescale.UploadWidget.open(options).then(
     uploadedImage.style.display = "block";
     uploadedImage.style.width = "200px";
     uploadedImage.style.height = "150px";
-    console.log(event_id, imageURL);
 
     if (imageURL && event_id) {
         let url = imageURL;
@@ -62,7 +60,6 @@ Bytescale.UploadWidget.open(options).then(
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 document.location.replace('/event/' + event_id);
             });
     }
@@ -90,8 +87,6 @@ const newFormHandler = async (event) => {
             .then((response) => response.json())
             .then((data) => {
                 event_id = data.id;
-                console.log(data);
-                console.log(event_id);
                 eventForm.setAttribute("style", "display:none;");
                 uploadBox.style.display = "block";
                 uploadBox.style.width = "500px";
@@ -104,8 +99,6 @@ const newFormHandler = async (event) => {
 const handleAddressSearch = (event) => {
     event.preventDefault();
     const addressLookUp = document.querySelector('#event-address').value.trim();
-
-    console.log(addressLookUp);
 
     let url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + addressLookUp;
 

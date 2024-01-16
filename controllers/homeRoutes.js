@@ -21,7 +21,6 @@ router.get('/event/:id', async (req, res) => {
     });
 
     const event = eventData.get({ plain: true });
-    console.log(event);
     res.render('event', {
       ...event,
       logged_in: req.session.logged_in
@@ -46,8 +45,6 @@ router.get('/myevents', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    console.log("======", user);
-
     res.render('profile', {
       // ...user,
       user,
@@ -70,39 +67,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// router.get('/', async (req, res) => {
-//   try {
-//     // Get the current date in the format YYYY-MM-DD
-//     const currentDate = new Date().toISOString().split('T')[0];
-//     console.log(currentDate);
-
-//     // Get all events for the current day and JOIN with user data
-//     const eventData = await Event.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//       where: {
-//         date: {
-//           [Op.eq]: `${currentDate}`, // filter events for current day
-//         },
-//       },
-//     });
-
-//     // Serialize data so the template can read it
-//     const events = eventData.map((event) => event.get({ plain: true }));
-//     // Pass serialized data and session flag into the template
-//     res.render('homepage', {
-//       events,
-//       logged_in: req.session.logged_in
-
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 router.get('/', async (req, res) => {
   try {
@@ -124,8 +88,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const events = eventData.map((event) => event.get({ plain: true }));
-    // Pass serialized data and session flag into template
-    console.log(events);
+    // Pass serialized data and session flag into template    
     res.render('homepage', {
       events,
       logged_in: req.session.logged_in
@@ -141,8 +104,6 @@ router.get('/createEvent', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id);
 
     const user = userData.get({ plain: true });
-
-    console.log("creating event by user", user);
 
     res.render('createEvent', {
       // ...user,
