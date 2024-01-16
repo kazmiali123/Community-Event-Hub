@@ -14,9 +14,6 @@ Image.init(
         url: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isUrl: true
-            }
         },
         event_id: {
             type: DataTypes.INTEGER,

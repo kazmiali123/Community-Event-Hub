@@ -138,20 +138,13 @@ router.get('/', async (req, res) => {
 router.get('/createEvent', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      include: [
-        {
-          model: Event,
-          attributes: ['id', 'name'],
-        }
-      ]
-    });
+    const userData = await User.findByPk(req.session.user_id);
 
     const user = userData.get({ plain: true });
 
-    console.log("======", user);
+    console.log("creating event by user", user);
 
-    res.render('profile', {
+    res.render('createEvent', {
       // ...user,
       user,
 

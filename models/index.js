@@ -1,6 +1,6 @@
 const Event = require('./Event');
 const User = require('./User');
-const Image = require('./Image');
+const Image = require('./image');
 
 Event.hasOne(Image, {
     foreignKey: 'event_id',

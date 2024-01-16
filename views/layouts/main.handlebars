@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Load at least jQuery before your page, so that $ is defined -->
+  <!-- Load at least jQuery before your page, so that $ is defined -->
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <title>Community Event Hub</title>
 </head>
+
 <body>
   <div class="container-fluid">
     <header class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,7 +20,7 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a class="nav-item nav-link" href="/myevents">
-        <button class="btn btn-outline-secondary" id="my-events">My Events</button>
+          <button class="btn btn-outline-secondary" id="my-events">My Events</button>
         </a>
         <button class="btn btn-outline-secondary" id="logout">Logout</button>
         {{else}}
@@ -29,7 +31,7 @@
     <main class="container mt-5 col-9">
 
       {{{ body }}}
-            
+
     </main>
     <footer class="footer mt-auto py-3 bg-light">
       <div class="container">
@@ -42,15 +44,13 @@
   <script src="/js/logout.js"></script>
   {{/if}}
   <!-- Bootstrap JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="http://underscorejs.org/underscore-min.js"></script>
   <script src="/js/addressAndMap.js"></script>
 </body>
+
 </html>
