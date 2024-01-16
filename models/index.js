@@ -1,6 +1,6 @@
-const Event = require('./eventsk');
-const User = require('./Usersk');
-const Image = require('./imagesk');
+const Event = require('./event');
+const User = require('./User');
+const Image = require('./image');
 
 // new comment
 Event.hasOne(Image, {
