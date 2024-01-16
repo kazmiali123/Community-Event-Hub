@@ -14,7 +14,8 @@ window.addEventListener('load', async () => {
     }));
 
     let userAllNames = events.map((event) => event.user.name);
-    let uniqueUsers = (_.uniq(userAllNames));
+    var uniqueUsers = userAllNames.filter((value, index, array) => array.indexOf(value) === index);
+
     showMapDefault(mapArray, uniqueUsers);
   }
 
